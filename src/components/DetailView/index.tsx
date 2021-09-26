@@ -1,3 +1,4 @@
+import { AspectRatio, Box } from '@chakra-ui/react';
 import { FormControl, InputLabel, MenuItem, Select } from '@material-ui/core';
 import * as h from 'history';
 import * as React from 'react';
@@ -81,18 +82,15 @@ const RightSide = ({ data, selectedPart }: any) => {
               ? `${data?.title} - Part ${partNumber}`
               : `Part ${partNumber}`}
           </h1>
-          <div
-            style={{
-              // flexDirection: 'row',
-              marginTop: 8,
-            }}
-          >
+          <div style={{ marginTop: 8 }}>
             {selectedPart?.video && (
-              <iframe
-                src={selectedPart.video}
-                // title={data?.title}
-                allowFullScreen
-              />
+              <AspectRatio ratio={16 / 9}>
+                <iframe
+                  src={selectedPart.video}
+                  // title={data?.title}
+                  allowFullScreen
+                />
+              </AspectRatio>
             )}
           </div>
           <div className="single-page__right content">
@@ -124,21 +122,27 @@ export const DetailView = ({
   resource,
 }: Props) => {
   return (
-    <div className="container-fluid padding-50">
-      <div className="row">
-        <LeftSide
-          title={data?.title || ''}
-          color={data?.color}
-          parts={data?.parts}
-          category={data?.category}
-          slug={data?.slug}
-          featuredImage={data?.featuredImage}
-          selectedPart={selectedPart}
-          showTitle={data?.showTitle}
-          resource={resource}
-        />
-        <RightSide data={data} history={history} selectedPart={selectedPart} />
+    <Box minH="80vh">
+      <div className="container-fluid padding-50">
+        <div className="row">
+          <LeftSide
+            title={data?.title || ''}
+            color={data?.color}
+            parts={data?.parts}
+            category={data?.category}
+            slug={data?.slug}
+            featuredImage={data?.featuredImage}
+            selectedPart={selectedPart}
+            showTitle={data?.showTitle}
+            resource={resource}
+          />
+          <RightSide
+            data={data}
+            history={history}
+            selectedPart={selectedPart}
+          />
+        </div>
       </div>
-    </div>
+    </Box>
   );
 };

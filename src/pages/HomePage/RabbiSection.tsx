@@ -1,3 +1,4 @@
+import { Center, Heading } from '@chakra-ui/react';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -8,17 +9,12 @@ export const RabbiSection = () => {
   return (
     <div className="container-fluid rabbi-container">
       <div className="col-lg-8 offset-lg-2">
-        <div className="center">
-          <Image
-            src={rabbi}
-            alt="Rabbi Don Goldstein"
-            className="lazyload img-fluid"
-          />
-        </div>
-        <div className="center" style={{ margin: '40px 0' }}>
-          <h3>Rabbi Don</h3>
-        </div>
-        <hr className="brand-hr" style={{ width: 200 }} />
+        <Center>
+          <Image src={rabbi} alt="Rabbi Don Goldstein" className="img-fluid" />
+        </Center>
+        <Heading textAlign="center" py="4">
+          Rabbi Don
+        </Heading>
         <p>
           Rabbi Don Goldstein leads&nbsp;Shoresh David Messianic Synagogue in
           Brandon. Here you will meet both Jews and Gentiles who are genuinely

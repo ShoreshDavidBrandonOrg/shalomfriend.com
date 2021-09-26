@@ -1,11 +1,6 @@
 // Variables
 @import 'variables';
 
-@font-face {
-  font-family: LemonMilk;
-  src: url('../../assets/font/LemonMilk.otf');
-}
-
 // Mixins
 @mixin padding-container($padding) {
   padding: $padding;
@@ -20,10 +15,6 @@
 
 // Components
 @import 'components/containers';
-
-p {
-  text-align: justify !important;
-}
 
 .brand-hr {
   border-color: $primary-color;
@@ -44,9 +35,4 @@ p {
     background-color: $white;
     color: $primary-color;
   }
-}
-
-
-h1 {
-  line-height: initial !important;
 }

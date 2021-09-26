@@ -1,3 +1,4 @@
+import { Center, Heading } from '@chakra-ui/react';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -8,17 +9,16 @@ export const AboutSection = () => {
   return (
     <div id="aboutSection" className="container-fluid about-container">
       <div className="col-lg-8 offset-lg-2">
-        <div style={{ textAlign: 'center', marginBottom: 20 }}>
+        <Center>
           <Image
             src={SDBLogo}
             alt="Shalom Friend Logo"
             className="lazyload img-fluid"
           />
-        </div>
-        <h2 style={{ textAlign: 'center', marginBottom: 20, color: 'black' }}>
+        </Center>
+        <Heading textAlign="center" py="4">
           Our Mission
-        </h2>
-        <hr className="brand-hr" style={{ width: 200, marginBottom: 20 }} />
+        </Heading>
         <p>
           Our mission can be summed up as follows. People everywhere need to be
           healed of many things, both mental/emotional and physical diseases. In

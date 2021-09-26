@@ -1,37 +1,180 @@
-import { faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  IconButton,
+  Input,
+  Link,
+  SimpleGrid,
+  Stack,
+  Text,
+  useColorModeValue,
+  useToast,
+} from '@chakra-ui/react';
+import { MailIcon } from '@heroicons/react/solid';
+import Axios from 'axios';
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { Link as RLink } from 'react-router-dom';
 
-import './footer.scss';
+import { API_URL } from '../../constants';
+
+const Logo = () => {
+  return <Heading color="white">Shalom Friend</Heading>;
+};
+
+const ListHeader = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <Text fontWeight="500" fontSize="lg" mb={2}>
+      {children}
+    </Text>
+  );
+};
 
 export const Footer = () => {
+  const [name, setName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const toast = useToast();
+
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+    try {
+      await Axios.post(`${API_URL}/email`, {
+        name,
+        email,
+      });
+
+      // setState({ ...state, data: 'Registration successful!' });
+      window.open(
+        'https://s3.amazonaws.com/images.shoreshdavidbrandon.com/pdf/friend-book-ninth-printing.pdf',
+        '_blank',
+      );
+    } catch (error: any) {
+      toast({
+        title: error?.response?.data?.message,
+        description: 'Please try again later',
+        status: 'error',
+        duration: 9000,
+        isClosable: true,
+      });
+    }
+  };
+
   return (
-    <footer>
-      <div className="footer-copyright">
-        <span>
-          © 2021 - Present | Shalom Friend | All Rights Reserved |{' '}
-          <Link to="/privacy-policy"> Privacy Policy</Link>
-        </span>
-        <div className="footer-social">
-          {/* Facebook */}
-          <a
-            href="https://www.facebook.com/shoreshdavidbrandon/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faFacebook} />
-          </a>
-          {/* YouTube */}
-          <a
-            href="https://www.youtube.com/channel/UC1yOFqmKt-1ruHxg6fBiAFg?view_as=subscriber"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faYoutube} />
-          </a>
-        </div>
-      </div>
-    </footer>
+    <Box bg={useColorModeValue('purple.900', 'purple.900')} color="white">
+      <Container as={Stack} maxW="6xl" py={10}>
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
+          <Stack align="flex-start">
+            <ListHeader>Navigation</ListHeader>
+            <Link as={RLink} to="/" variant="footer">
+              Home
+            </Link>
+            <Link as={RLink} to="/services/rabbi-don" variant="footer">
+              Teachings
+            </Link>
+            <Link as={RLink} to="/jewish" variant="footer">
+              Jewish
+            </Link>
+            <Link as={RLink} to="/discoveries/evolution" variant="footer">
+              Discoveries
+            </Link>
+            <Link
+              href="https://shalom-friend.square.site"
+              variant="footer"
+              target="_blank"
+            >
+              Store
+            </Link>
+
+            <Link
+              href="https://shalom-friend.square.site/product/thank-you-for-additional-donations-we-greatly-appreciate-you-/1?cp=true&sa=true&sbp=false&q=false"
+              variant="footer"
+              target="_blank"
+            >
+              Donate
+            </Link>
+          </Stack>
+          <Stack align="flex-start">
+            <ListHeader>Legal</ListHeader>
+            <Link as={RLink} to="/privacy-policy" variant="footer">
+              Privacy Policy
+            </Link>
+          </Stack>
+          <Stack align="flex-start">
+            <ListHeader>Stay up to date</ListHeader>
+            <Stack direction="column">
+              <Input
+                placeholder="Name"
+                bg={useColorModeValue('blackAlpha.500', 'whiteAlpha.500')}
+                border={0}
+                boxShadow="lg"
+                w="100%"
+                _placeholder={{
+                  color: 'gray.700',
+                }}
+                _focus={{
+                  bg: 'whiteAlpha.300',
+                }}
+                name="name"
+                onChange={(e) => setName(e.target.value)}
+              />
+              <Input
+                placeholder="Email"
+                bg={useColorModeValue('blackAlpha.500', 'whiteAlpha.500')}
+                border={0}
+                boxShadow="lg"
+                w="100%"
+                _placeholder={{
+                  color: 'gray.700',
+                }}
+                _focus={{
+                  bg: 'whiteAlpha.300',
+                }}
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <IconButton
+                bg={useColorModeValue('purple.400', 'purple.800')}
+                color={useColorModeValue('white', 'gray.800')}
+                _hover={{
+                  bg: 'purple.700',
+                }}
+                _active={{
+                  bg: 'purple.700',
+                }}
+                boxShadow="lg"
+                aria-label="Subscribe"
+                icon={<MailIcon style={{ height: 24 }} />}
+                onClick={handleSubmit}
+              />
+            </Stack>
+          </Stack>
+        </SimpleGrid>
+      </Container>
+      <Box py={10}>
+        <Flex
+          align="center"
+          _before={{
+            content: '""',
+            borderBottom: '1px solid',
+            borderColor: useColorModeValue('blackAlpha.500', 'blackAlpha.500'),
+            flexGrow: 1,
+            mr: 8,
+          }}
+          _after={{
+            content: '""',
+            borderBottom: '1px solid',
+            borderColor: useColorModeValue('blackAlpha.500', 'blackAlpha.500'),
+            flexGrow: 1,
+            ml: 8,
+          }}
+        >
+          <Logo />
+        </Flex>
+        <Text pt={6} fontSize="sm" textAlign="center">
+          © 2021 Shalom Friend. All rights reserved
+        </Text>
+      </Box>
+    </Box>
   );
 };

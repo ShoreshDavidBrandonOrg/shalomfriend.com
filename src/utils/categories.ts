@@ -31,10 +31,6 @@ export const sermonCategories = [
     value: 'rabbi-don',
   },
   {
-    label: `Rabbi Don's Discipleship Book`,
-    value: 'rabbi-dons-discipleship-book',
-  },
-  {
     label: 'Get Healed Fast',
     value: 'get-healed-fast',
   },

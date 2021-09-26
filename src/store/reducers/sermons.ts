@@ -37,8 +37,8 @@ export const sermonsReducer = (state = initialState, action: any) => {
 };
 
 export const getSermonsByCategory = (allSermons: any, category: string) => {
-  return Object.values(allSermons).filter(
-    (node: any) => node.category === category,
+  return Object.values(allSermons || {}).filter(
+    (node: any) => node?.category === category,
   );
 };
 
@@ -51,7 +51,7 @@ export const searchSermons = (allSermons: any, query: string) => {
     return results;
   }
 
-  Object.values(allSermons).map((node: any) => {
+  Object.values(allSermons || {}).map((node: any) => {
     if (node.title.toLowerCase().indexOf(query.toLowerCase()) > -1) {
       results.push(node);
     }

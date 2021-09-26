@@ -38,13 +38,13 @@ export const resourcesReducer = (state = initialState, action: any) => {
 type Type = 'jewish' | 'article';
 
 export const getResourcesByType = (allResources: any, type: Type) => {
-  return Object.values(allResources)
+  return Object.values(allResources || {})
     .filter((node: any) => node?.resourceType === type)
     .sort((a: any, b: any) => (a?.order > b?.order) as any);
 };
 
 export const getResourcesByCategory = (allResources: any, category: string) => {
-  return Object.values(allResources)?.filter(
+  return Object.values(allResources || {})?.filter(
     (node: any) => node?.category === category,
   );
 };

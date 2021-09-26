@@ -13,7 +13,6 @@ import { ErrorBoundary } from './containers/ErrorBoundary';
 import { DiscoveriesPage } from './pages/DiscoveriesPage';
 import { HomePage } from './pages/HomePage';
 import { JewishPage } from './pages/JewishPage';
-import { LiveStreamPage } from './pages/LiveStreamPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { ServiceListPage } from './pages/ServiceListPage';
@@ -32,7 +31,6 @@ render(
 
             <Switch>
               <Route exact path="/" component={HomePage} />
-              <Route exact path="/live" component={LiveStreamPage} />
 
               <Redirect exact path="/services" to="/services/rabbi-don" />
               <Route

@@ -13,11 +13,3 @@ export const SELECT_SERMON = 'SELECT_SERMON';
 export const CREATE_SERMON = 'CREATE_SERMON';
 export const UPDATE_SERMON = 'UPDATE_SERMON';
 export const DELETE_SERMON = 'DELETE_SERMON';
-
-// Events
-export const LOAD_EVENT = 'LOAD_EVENT';
-export const LOAD_EVENTS = 'LOAD_EVENTS';
-export const SELECT_EVENT = 'SELECT_EVENT';
-export const CREATE_EVENT = 'CREATE_EVENT';
-export const UPDATE_EVENT = 'UPDATE_EVENT';
-export const DELETE_EVENT = 'DELETE_EVENT';

@@ -1,21 +1,11 @@
-import { Center, Heading } from '@chakra-ui/react';
+import { Heading } from '@chakra-ui/react';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-
-import SDBLogo from '../../assets/img/sdb-logo-md.png';
-import { Image } from '../../components/Image';
 
 export const AboutSection = () => {
   return (
     <div id="aboutSection" className="container-fluid about-container">
       <div className="col-lg-8 offset-lg-2">
-        <Center>
-          <Image
-            src={SDBLogo}
-            alt="Shalom Friend Logo"
-            className="lazyload img-fluid"
-          />
-        </Center>
         <Heading textAlign="center" py="4">
           Our Mission
         </Heading>

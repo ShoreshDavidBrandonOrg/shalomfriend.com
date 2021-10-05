@@ -1,10 +1,21 @@
+import { Center, Image } from '@chakra-ui/react';
 import * as React from 'react';
 
 import bookImg from '../../assets/img/book.jpeg';
+import rabbi from '../../assets/img/rabbi-don-circle.png';
 
 export const IntroSection = () => {
   return (
     <div className="container-fluid intro-container">
+      <Center>
+        <Image
+          src={rabbi}
+          alt="Rabbi Don Goldstein"
+          className="img-fluid"
+          maxH="300"
+          mb="16"
+        />
+      </Center>
       <div className="row">
         <div className="col-lg-3">
           <img src={bookImg} />

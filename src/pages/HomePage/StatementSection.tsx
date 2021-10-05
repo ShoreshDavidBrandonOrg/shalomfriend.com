@@ -1,3 +1,4 @@
+import { Heading } from '@chakra-ui/react';
 import * as React from 'react';
 
 import { Accordion } from '../../components/Accordion';
@@ -5,7 +6,7 @@ import { Accordion } from '../../components/Accordion';
 export const StatementSection = () => (
   <div className="container-fluid accordion-container">
     <div className="accordion-title">
-      <h3>Our Statement of Faith.</h3>
+      <Heading py="4">Our Statement of Faith.</Heading>
     </div>
     <Accordion
       heading="Exodus 3:6"

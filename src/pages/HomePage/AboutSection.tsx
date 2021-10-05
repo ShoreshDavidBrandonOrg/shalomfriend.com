@@ -1,6 +1,5 @@
-import { Heading } from '@chakra-ui/react';
+import { Heading, Link } from '@chakra-ui/react';
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 
 export const AboutSection = () => {
   return (
@@ -21,13 +20,13 @@ export const AboutSection = () => {
             here
           </Link>{' '}
           for our healing teachings... and{' '}
-          <a
+          <Link
             href="https://s3.amazonaws.com/images.shoreshdavidbrandon.com/pdf/friend-book-ninth-printing.pdf"
             target="_blank"
             rel="noreferrer noopener"
           >
-            <strong>click here</strong>
-          </a>{' '}
+            click here
+          </Link>{' '}
           to read Rabbi Don’s worldwide best selling book for free
         </p>
       </div>

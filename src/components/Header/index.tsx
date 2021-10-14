@@ -118,7 +118,7 @@ export const Header = () => {
               </div>
             </li>
             <li className="nav-item">
-              <a href="https://shalom-friend.square.site/" target="_blank">
+              <a href="https://shalom-friend.square.site/s/shop" target="_blank">
                 Store
               </a>
             </li>

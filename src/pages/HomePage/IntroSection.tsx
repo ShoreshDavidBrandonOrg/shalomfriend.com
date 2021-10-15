@@ -1,4 +1,4 @@
-import { Center, Image } from '@chakra-ui/react';
+import { Center, Heading, Image } from '@chakra-ui/react';
 import * as React from 'react';
 
 import bookImg from '../../assets/img/book.jpeg';
@@ -21,7 +21,7 @@ export const IntroSection = () => {
           <img src={bookImg} />
         </div>
         <div className="col-lg-9">
-          <h3>Welcome to Shalom Friend</h3>
+          <Heading>Welcome to Shalom Friend</Heading>
           <p>
             In this website you will find teachings from Rabbi Don Goldstein. No
             matter where you are starting from, you are welcome here! This is a

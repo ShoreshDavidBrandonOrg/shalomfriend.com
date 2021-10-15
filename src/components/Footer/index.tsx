@@ -63,7 +63,7 @@ export const Footer = () => {
   return (
     <Box bg={useColorModeValue('purple.900', 'purple.900')} color="white">
       <Container as={Stack} maxW="6xl" py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
+        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
           <Stack align="flex-start">
             <ListHeader>Navigation</ListHeader>
             <Link as={RLink} to="/" variant="footer">
@@ -102,8 +102,10 @@ export const Footer = () => {
           </Stack>
           <Stack align="flex-start">
             <ListHeader>Stay up to date</ListHeader>
-            <Stack direction="column">
-              <Input
+            <Stack direction="column" w="100%">
+              <div className="AW-Form-1853350281" />
+
+              {/* <Input
                 placeholder="Name"
                 bg={useColorModeValue('blackAlpha.500', 'whiteAlpha.500')}
                 border={0}
@@ -146,7 +148,7 @@ export const Footer = () => {
                 aria-label="Subscribe"
                 icon={<MailIcon style={{ height: 24 }} />}
                 onClick={handleSubmit}
-              />
+              /> */}
             </Stack>
           </Stack>
         </SimpleGrid>

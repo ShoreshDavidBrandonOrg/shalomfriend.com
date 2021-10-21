@@ -14,16 +14,17 @@ import rabbi from '../../assets/img/rabbi-don-circle.png';
 
 export const IntroSection = () => {
   return (
-    <Stack p="24" w="100%">
-      <Flex>
+    <Stack p={{ base: '8', lg: '24' }} w="100%">
+      <Flex direction={{ base: 'column', lg: 'row' }} align="center" w="100%">
         <Image
           src={rabbi}
           alt="Rabbi Don Goldstein"
-          maxH="300"
+          h="300px"
+          w="300px"
           mb="16"
           mr="8"
         />
-        <Flex direction="column">
+        <Flex direction={{ base: 'column', lg: 'column' }}>
           <Heading mb="4">Welcome to Shalom Friend</Heading>
           <Text mb="2">
             In this website you will find teachings from Rabbi Don Goldstein. No
@@ -51,8 +52,13 @@ export const IntroSection = () => {
           </Text>
         </Flex>
       </Flex>
-      <Flex p="8" direction="row" align="center" justify="center">
-        <Stack mr="16">
+      <Flex
+        p="8"
+        direction={{ base: 'column', lg: 'row' }}
+        align="center"
+        justify="center"
+      >
+        <Stack mr={{ base: 0, lg: '16' }} mb={{ base: '16', lg: 0 }}>
           <Image
             shadow="sm"
             src="https://images-na.ssl-images-amazon.com/images/I/512TXZQRKTL._SX303_BO1,204,203,200_.jpg"

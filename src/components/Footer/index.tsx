@@ -79,7 +79,7 @@ export const Footer = () => {
               Discoveries
             </Link>
             <Link
-              href="https://shalom-friend.square.site"
+              href="https://shalom-friend-1.square.site/"
               variant="footer"
               target="_blank"
             >
@@ -87,7 +87,7 @@ export const Footer = () => {
             </Link>
 
             <Link
-              href="https://shalom-friend.square.site/product/thank-you-for-additional-donations-we-greatly-appreciate-you-/1?cp=true&sa=true&sbp=false&q=false"
+              href="https://shalom-friend-1.square.site/product/thank-you-for-additional-donations-we-greatly-appreciate-you-/1?cp=true&sa=true&sbp=false&q=false"
               variant="footer"
               target="_blank"
             >
